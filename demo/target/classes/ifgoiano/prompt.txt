@@ -1,0 +1,1 @@
+faça um sistema em Java que resolva um algoritmo simplex para funcionar no console recebendo os dados do usuário.
