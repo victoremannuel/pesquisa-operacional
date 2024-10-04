@@ -2,10 +2,22 @@ package ifgoiano;
 
 import java.util.Scanner;
 
+/*
+ * Alunos: 
+ * 
+ * Víctor Emannuel de Souza Teixeira
+ * Stephany Lima Vital
+ * 
+ */
+
 public class Simplex {
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        // Perguntar se é maximização ou minimização
+        System.out.println("Você quer maximizar ou minimizar a função objetivo? Digite '+' para maximizar ou '-' para minimizar:");
+        char tipoProblema = scanner.next().charAt(0);
 
         // Perguntar o número de variáveis e restrições
         System.out.println("Informe o número de variáveis:");
@@ -18,6 +30,13 @@ public class Simplex {
         double[] funcObj = new double[numVariaveis];
         for (int i = 0; i < numVariaveis; i++) {
             funcObj[i] = scanner.nextDouble();
+        }
+
+        // Se for minimização, inverter os coeficientes da função objetivo
+        if (tipoProblema == '-') {
+            for (int i = 0; i < numVariaveis; i++) {
+                funcObj[i] = -funcObj[i];
+            }
         }
 
         // Receber coeficientes das restrições
@@ -84,7 +103,7 @@ public class Simplex {
         for (int i = 0; i < numRestricoes; i++) {
             System.out.println("x" + (i + 1) + " = " + simplex[i][totalColunas - 1]);
         }
-        System.out.println("Valor máximo de z = " + (-simplex[numRestricoes][totalColunas - 1]));
+        System.out.println("Valor máximo de z = " + (simplex[numRestricoes][totalColunas - 1]));
     }
 
     // Método para encontrar a coluna pivô (menor valor na última linha)
