@@ -2,6 +2,27 @@ package ifgoiano;
 
 import java.util.Scanner;
 
+/*
+ * 
+ * Alunos:
+ * Stephany Lima Vital
+ * Víctor Emannuel de Souza Teixeira
+ * 
+ * OBS.: Os dados da tabela serão perguntados 1 a 1 por linha, por ex:
+ * Linha 1
+ * 0
+ * -3
+ * -2
+ * 1
+ * 0
+ * 0
+ * Linha 2
+ * 0
+ * 1
+ * etc...
+ * 
+ */
+
 public class Simplex {
     
     // Método para pegar os dados do problema do usuário
